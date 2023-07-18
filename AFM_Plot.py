@@ -29,6 +29,9 @@ file = 'D:/AFM_Data/Data/' + filename + fileextension
 with open(file, 'r') as file:
     ascii_data = file.readlines()
 
+# 排除第一行和最後一行的數據
+ascii_data = ascii_data[1:]
+
 # 將數據轉換為浮點數數組
 Data = np.array(ascii_data, dtype=np.float32)
 
